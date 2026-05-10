@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Vista previa de dashboard BI Strategic</title>
+  <desc id="desc">Mockup de dashboard con barra lateral, indicadores, grafico mensual, mix de canales y ranking de productos.</desc>
+  <rect width="1200" height="760" fill="#f3f6fb"/>
+  <rect x="52" y="42" width="1096" height="676" rx="26" fill="#ffffff"/>
+  <rect x="52" y="42" width="232" height="676" rx="26" fill="#07111f"/>
+  <rect x="83" y="78" width="44" height="44" rx="10" fill="#2451b2"/>
+  <text x="142" y="106" fill="#ffffff" font-family="Arial" font-size="20" font-weight="700">BI STRATEGIC</text>
+  <text x="84" y="168" fill="#70829c" font-family="Arial" font-size="13" font-weight="700">ANALISIS</text>
+  <rect x="82" y="190" width="168" height="48" rx="9" fill="#192436"/>
+  <text x="104" y="220" fill="#ffffff" font-family="Arial" font-size="15" font-weight="700">Panel central</text>
+  <text x="324" y="104" fill="#0f172a" font-family="Arial" font-size="30" font-weight="700">Dashboard de ventas</text>
+  <text x="324" y="134" fill="#64748b" font-family="Arial" font-size="16">Ventas, canales, unidades y productos top en una sola vista.</text>
+  <rect x="878" y="82" width="88" height="38" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
+  <text x="901" y="106" fill="#334155" font-family="Arial" font-size="14">2025</text>
+  <rect x="978" y="82" width="118" height="38" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
+  <text x="1004" y="106" fill="#334155" font-family="Arial" font-size="14">Todos</text>
+  <g transform="translate(324 174)">
+    <rect width="178" height="112" rx="12" fill="#ffffff" stroke="#dbe3ef"/>
+    <text x="20" y="32" fill="#64748b" font-family="Arial" font-size="13" font-weight="700">VENTA BRUTA</text>
+    <text x="20" y="70" fill="#0f172a" font-family="Arial" font-size="28" font-weight="700">$8.940.000</text>
+    <text x="20" y="94" fill="#64748b" font-family="Arial" font-size="13">86 registros</text>
+  </g>
+  <g transform="translate(518 174)">
+    <rect width="178" height="112" rx="12" fill="#ffffff" stroke="#dbe3ef"/>
+    <text x="20" y="32" fill="#64748b" font-family="Arial" font-size="13" font-weight="700">CRECIMIENTO</text>
+    <text x="20" y="70" fill="#15925b" font-family="Arial" font-size="28" font-weight="700">18,4%</text>
+    <text x="20" y="94" fill="#64748b" font-family="Arial" font-size="13">vs ano anterior</text>
+  </g>
+  <g transform="translate(712 174)">
+    <rect width="178" height="112" rx="12" fill="#ffffff" stroke="#dbe3ef"/>
+    <text x="20" y="32" fill="#64748b" font-family="Arial" font-size="13" font-weight="700">GANANCIA</text>
+    <text x="20" y="70" fill="#0f172a" font-family="Arial" font-size="28" font-weight="700">$2.680.000</text>
+    <text x="20" y="94" fill="#64748b" font-family="Arial" font-size="13">margen acumulado</text>
+  </g>
+  <g transform="translate(906 174)">
+    <rect width="178" height="112" rx="12" fill="#ffffff" stroke="#dbe3ef"/>
+    <text x="20" y="32" fill="#64748b" font-family="Arial" font-size="13" font-weight="700">TICKET PROMEDIO</text>
+    <text x="20" y="70" fill="#0f172a" font-family="Arial" font-size="28" font-weight="700">$103.953</text>
+    <text x="20" y="94" fill="#64748b" font-family="Arial" font-size="13">por venta</text>
+  </g>
+  <rect x="324" y="314" width="498" height="250" rx="14" fill="#ffffff" stroke="#dbe3ef"/>
+  <text x="348" y="350" fill="#0f172a" font-family="Arial" font-size="18" font-weight="700">Tendencia mensual</text>
+  <line x1="356" y1="512" x2="786" y2="512" stroke="#e5ebf3"/>
+  <line x1="356" y1="468" x2="786" y2="468" stroke="#e5ebf3"/>
+  <line x1="356" y1="424" x2="786" y2="424" stroke="#e5ebf3"/>
+  <rect x="376" y="448" width="22" height="64" fill="#2451b2"/>
+  <rect x="420" y="418" width="22" height="94" fill="#2451b2"/>
+  <rect x="464" y="392" width="22" height="120" fill="#2451b2"/>
+  <rect x="508" y="432" width="22" height="80" fill="#2451b2"/>
+  <rect x="552" y="380" width="22" height="132" fill="#2451b2"/>
+  <rect x="596" y="404" width="22" height="108" fill="#2451b2"/>
+  <rect x="640" y="362" width="22" height="150" fill="#2451b2"/>
+  <rect x="684" y="388" width="22" height="124" fill="#2451b2"/>
+  <rect x="728" y="344" width="22" height="168" fill="#2451b2"/>
+  <rect x="842" y="314" width="242" height="250" rx="14" fill="#ffffff" stroke="#dbe3ef"/>
+  <text x="866" y="350" fill="#0f172a" font-family="Arial" font-size="18" font-weight="700">Mix de canales</text>
+  <circle cx="942" cy="444" r="70" fill="#2451b2"/>
+  <path d="M942 374a70 70 0 0 1 60 106L942 444z" fill="#f0aa22"/>
+  <path d="M942 444l60 36a70 70 0 0 1-96 26z" fill="#15925b"/>
+  <circle cx="942" cy="444" r="36" fill="#ffffff"/>
+  <rect x="1030" y="394" width="12" height="12" fill="#2451b2"/>
+  <text x="1048" y="405" fill="#334155" font-family="Arial" font-size="12">Web</text>
+  <rect x="1030" y="424" width="12" height="12" fill="#f0aa22"/>
+  <text x="1048" y="435" fill="#334155" font-family="Arial" font-size="12">Instagram</text>
+  <rect x="1030" y="454" width="12" height="12" fill="#15925b"/>
+  <text x="1048" y="465" fill="#334155" font-family="Arial" font-size="12">WhatsApp</text>
+  <rect x="324" y="590" width="760" height="86" rx="14" fill="#ffffff" stroke="#dbe3ef"/>
+  <text x="348" y="626" fill="#0f172a" font-family="Arial" font-size="18" font-weight="700">Top productos</text>
+  <rect x="500" y="616" width="360" height="10" rx="5" fill="#edf2f8"/>
+  <rect x="500" y="616" width="292" height="10" rx="5" fill="#f0aa22"/>
+  <text x="884" y="628" fill="#334155" font-family="Arial" font-size="14">$1.840.000</text>
+  <rect x="500" y="646" width="360" height="10" rx="5" fill="#edf2f8"/>
+  <rect x="500" y="646" width="214" height="10" rx="5" fill="#f0aa22"/>
+  <text x="884" y="658" fill="#334155" font-family="Arial" font-size="14">$1.230.000</text>
+</svg>

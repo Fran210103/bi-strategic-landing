@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agenda Clara | Recepcion WhatsApp</title>
+  <meta name="description" content="Demo operativa de recepcion y reservas por WhatsApp para peluquerias.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#simulador">Saltar al simulador</a>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true">AC</span>
+        <div>
+          <strong>Agenda Clara</strong>
+          <span>Recepcion WhatsApp para Salon Magnolia</span>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <span class="status-pill" id="apiStatus" data-status="checking">Preparando atencion</span>
+        <button class="secondary-button" id="resetDemoButton" type="button">Limpiar conversacion</button>
+      </div>
+    </header>
+
+    <main class="operator-layout" id="simulador">
+      <section class="chat-panel" aria-label="Conversacion de WhatsApp">
+        <div class="panel-toolbar">
+          <div>
+            <p class="eyebrow">Bandeja WhatsApp</p>
+            <h1>Camila pregunta por una hora</h1>
+          </div>
+          <div class="conversation-meta" aria-label="Datos de la conversacion">
+            <span>Hoy</span>
+            <span>Sin confirmar</span>
+          </div>
+        </div>
+
+        <section class="quick-actions" aria-label="Mensajes de prueba">
+          <h2>Probar una consulta</h2>
+          <div>
+            <button type="button" data-message="Hola, tienen hora para corte?">Pedir hora</button>
+            <button type="button" data-message="Cuales son los precios?">Consultar valores</button>
+            <button type="button" data-message="Donde estan ubicados?">Ubicacion</button>
+            <button type="button" data-message="Atienden los sabados?">Horario</button>
+          </div>
+        </section>
+
+        <div class="chat-window" id="chatWindow" aria-live="polite"></div>
+
+        <form class="chat-form" id="chatForm">
+          <label class="visually-hidden" for="messageInput">Mensaje de la clienta</label>
+          <input id="messageInput" name="messageInput" type="text" placeholder="Escribe una consulta como clienta..." autocomplete="off">
+          <button class="primary-button" type="submit">Responder</button>
+        </form>
+      </section>
+
+      <aside class="agenda-panel" aria-label="Reservas por confirmar">
+        <div class="panel-toolbar stacked">
+          <div>
+            <p class="eyebrow">Agenda del equipo</p>
+            <h2>Reservas por confirmar</h2>
+          </div>
+          <span class="quiet-note">El equipo decide si confirma o reagenda.</span>
+        </div>
+
+        <div class="metric-grid">
+          <article>
+            <span id="totalRequests">0</span>
+            <strong>Total</strong>
+          </article>
+          <article>
+            <span id="pendingRequests">0</span>
+            <strong>Por confirmar</strong>
+          </article>
+        </div>
+
+        <div class="request-list" id="requestList"></div>
+
+        <div class="toolbox">
+          <button class="secondary-button full-width" id="copySummaryButton" type="button">Copiar lista del dia</button>
+          <button class="secondary-button full-width" id="downloadCsvButton" type="button">Descargar registro</button>
+        </div>
+      </aside>
+
+      <aside class="setup-panel" aria-label="Ficha del salon">
+        <div class="panel-toolbar stacked">
+          <div>
+            <p class="eyebrow">Ficha del salon</p>
+            <h2>Datos que usa Recepcion</h2>
+          </div>
+        </div>
+
+        <form class="setup-form" id="setupForm">
+          <label for="businessName">
+            Salon
+            <input id="businessName" name="businessName" type="text" value="Salon Magnolia" autocomplete="organization">
+          </label>
+
+          <label for="businessHours">
+            Horario
+            <input id="businessHours" name="businessHours" type="text" value="Lunes a sabado, 10:00 a 19:00">
+          </label>
+
+          <label for="businessAddress">
+            Direccion
+            <input id="businessAddress" name="businessAddress" type="text" value="Providencia, Santiago" autocomplete="street-address">
+          </label>
+
+          <label for="businessServices">
+            Servicios y valores
+            <textarea id="businessServices" name="businessServices" rows="5">Corte mujer - desde $18.000
+Coloracion - desde $45.000
+Brushing - desde $16.000
+Manicure - desde $14.000
+Tratamiento capilar - desde $35.000</textarea>
+          </label>
+
+          <label for="bookingPolicy">
+            Confirmacion
+            <textarea id="bookingPolicy" name="bookingPolicy" rows="4">La solicitud queda pendiente hasta que el equipo confirme disponibilidad. Para cambios o cancelaciones, avisar con anticipacion.</textarea>
+          </label>
+
+          <button class="primary-button full-width" id="saveConfigButton" type="button">Actualizar ficha</button>
+        </form>
+      </aside>
+    </main>
+
+    <section class="pilot-strip" aria-label="Resumen del piloto">
+      <article>
+        <span>1</span>
+        <strong>Responde lo basico</strong>
+        <p>Valores, direccion, horario y condiciones del salon.</p>
+      </article>
+      <article>
+        <span>2</span>
+        <strong>Pide datos sin apuro</strong>
+        <p>Nombre, servicio, dia, horario preferido y telefono.</p>
+      </article>
+      <article>
+        <span>3</span>
+        <strong>Deja la reserva pendiente</strong>
+        <p>El equipo confirma despues de revisar disponibilidad.</p>
+      </article>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

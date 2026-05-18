@@ -4,175 +4,90 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BI Strategic | Dashboard de ventas en Google Sheets</title>
-  <meta name="description" content="Dashboard de ventas en Google Sheets para negocios que venden por Instagram, WhatsApp, ecommerce o tienda fisica.">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Dashboard de ventas en Google Sheets para ordenar ventas, margen, canales y productos top sin reportes manuales.">
+  <style>
+    :root{--ink:#1b1b1f;--muted:#777984;--line:#e5e7eb;--paper:#fff;--wash:#f7f8fa;--black:#111114;--blue:#168bf2;--green:#0bb36d;--yellow:#ffba08;--shadow:0 24px 70px rgba(18,18,22,.09)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;overflow-x:hidden;color:var(--ink);background:linear-gradient(90deg,rgba(0,0,0,.035) 1px,transparent 1px),linear-gradient(180deg,rgba(0,0,0,.03) 1px,transparent 1px),var(--paper);background-size:72px 72px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}.logo{width:40px;height:40px;border-radius:11px;box-shadow:0 12px 28px rgba(17,17,20,.15);flex:0 0 auto}.site-header{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px clamp(18px,4vw,58px);background:rgba(255,255,255,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(229,231,235,.62)}.brand{display:inline-flex;align-items:center;gap:12px;font-weight:800;color:#38383f}.brand small{display:block;color:#8a8b93;font-size:11px;line-height:1.1}.nav{display:flex;align-items:center;gap:10px}.nav a{min-height:42px;display:inline-flex;align-items:center;padding:0 14px;color:#5b5c64;font-weight:700}.cta{color:#fff!important;background:var(--black);border-radius:999px;box-shadow:0 16px 38px rgba(0,0,0,.14)}.hero{display:grid;justify-items:center;max-width:1060px;margin:0 auto;padding:clamp(86px,11vw,150px) 20px 58px;text-align:center}.hero .logo{width:82px;height:82px;border-radius:23px;margin-bottom:42px;box-shadow:0 22px 60px rgba(17,17,20,.14)}.eyebrow{margin:0 0 16px;color:#b5b7bf;font-size:14px;font-weight:800;letter-spacing:.04em}h1{margin:0 0 18px;color:#303036;font-size:clamp(56px,12vw,150px);font-weight:560;letter-spacing:0;line-height:.92}h2{margin:0 0 16px;color:#242428;font-size:clamp(32px,5vw,68px);font-weight:560;line-height:.98}p{margin-top:0}.hero-copy{max-width:780px;margin-bottom:0;color:#92939b;font-size:clamp(18px,2.1vw,27px);line-height:1.38}.proof,.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.proof{margin-top:24px}.proof span{min-height:38px;display:inline-flex;align-items:center;color:#45464d;background:rgba(255,255,255,.84);border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:800;padding:0 14px;box-shadow:0 8px 22px rgba(0,0,0,.04)}.actions{gap:12px;margin-top:32px}.button{min-height:54px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:999px;font-weight:800;padding:0 24px}.button.primary{color:#fff;background:var(--black);border-color:var(--black);box-shadow:0 16px 38px rgba(0,0,0,.14)}.button.secondary{background:rgba(255,255,255,.82);color:#54555d}.wrap{width:min(100% - 40px,1180px);margin-inline:auto}.preview{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;padding:42px 0 86px}.panel,.side-card,.price,.process,.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}.panel{padding:24px}.panel-top{display:flex;justify-content:space-between;gap:16px;margin-bottom:18px}.panel-title strong{display:block;font-size:22px}.panel-title span{display:block;color:var(--muted);font-weight:700}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.kpi{min-height:100px;padding:16px;border:1px solid #e8ebf0;border-radius:8px;background:#fbfcfd}.kpi small{display:block;margin-bottom:10px;color:#858792;font-weight:800}.kpi strong{font-size:clamp(20px,2.4vw,30px)}.bars{display:grid;gap:12px;margin-top:20px}.bar{display:grid;grid-template-columns:112px 1fr 90px;align-items:center;gap:12px;color:#555760;font-weight:700}.bar i{display:block;height:12px;border-radius:999px;background:#edf1f6;overflow:hidden}.bar i span{display:block;height:100%;border-radius:999px;background:var(--blue)}.bar:nth-child(2) i span{background:var(--green)}.bar:nth-child(3) i span{background:var(--yellow)}.side{display:grid;gap:24px}.side-card{padding:24px}.side-card h3,.price h3,.process h3{margin:0 0 10px;font-size:24px}.side-card p,.price p,.process li,.faq p{color:var(--muted);line-height:1.58}.questions{display:grid;gap:10px}.questions span{display:block;padding:14px;border:1px solid var(--line);border-radius:8px;background:var(--wash);font-weight:800}.section{display:grid;grid-template-columns:.82fr 1.18fr;gap:36px;padding:76px 0;border-top:1px solid var(--line)}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;box-shadow:0 10px 30px rgba(20,20,22,.04)}.card strong{display:block;margin-bottom:8px;font-size:20px}.card p{margin-bottom:0;color:var(--muted);line-height:1.6}.price-section{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:76px 0;border-top:1px solid var(--line)}.price,.process{padding:28px}.price strong{display:block;margin:8px 0 14px;font-size:46px}.price ul,.process ol{display:grid;gap:10px;margin:22px 0;padding-left:20px}.faq{display:grid;grid-template-columns:.75fr 1.25fr;gap:36px;padding:76px 0;border-top:1px solid var(--line)}.faq-list{display:grid;gap:12px}.faq details{padding:20px}.faq summary{cursor:pointer;font-weight:900}.final{display:grid;justify-items:center;text-align:center;padding:86px 20px 96px;border-top:1px solid var(--line)}.final .logo{width:58px;height:58px;border-radius:16px;margin-bottom:28px}footer{width:min(100% - 40px,1180px);margin:0 auto;display:flex;justify-content:space-between;gap:16px;padding:28px 0 42px;color:#77777f;border-top:1px solid var(--line)}footer strong{color:#222226}@media(max-width:820px){.nav a:not(.cta){display:none}.preview,.section,.price-section,.faq{grid-template-columns:1fr}.kpis,.cards{grid-template-columns:1fr 1fr}.bar{grid-template-columns:90px 1fr 74px}}@media(max-width:520px){.site-header{padding-inline:14px}.brand small{display:none}.nav .cta{display:none}.hero{width:min(100% - 24px,1060px);padding-inline:0;padding-top:72px}.hero .logo{width:68px;height:68px;border-radius:19px}h1{font-size:clamp(46px,13vw,56px)}.hero-copy{max-width:335px;font-size:17px}.button,.actions{width:100%}.proof span{font-size:13px}.wrap,footer{width:min(100% - 24px,1180px)}.kpis,.cards{grid-template-columns:1fr}.bar{grid-template-columns:1fr}.bar strong{text-align:left}footer{flex-direction:column}}
+  </style>
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="#inicio" aria-label="BI Strategic inicio">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span>BI Strategic</span>
+      <svg class="logo" viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" rx="24" fill="#111114"/><path d="M22 25h26v10H34v12h12v10H34v20H22V25Z" fill="#fff"/><path d="M53 25h10c14 0 23 10 23 26s-9 26-23 26H53V25Zm12 11v30c6-1 9-6 9-15s-3-14-9-15Z" fill="#fff"/><rect x="18" y="80" width="14" height="5" rx="2.5" fill="#168bf2"/><rect x="38" y="74" width="14" height="11" rx="3" fill="#0bb36d"/><rect x="58" y="67" width="14" height="18" rx="3" fill="#ffba08"/></svg>
+      <span>BI Strategic<small>Francisco Diaz</small></span>
     </a>
-    <nav aria-label="Navegacion principal">
+    <nav class="nav" aria-label="Navegacion principal">
+      <a href="#vista">Vista</a>
       <a href="#incluye">Incluye</a>
       <a href="#precio">Precio</a>
-      <a href="#faq">FAQ</a>
+      <a class="cta" href="https://wa.me/56958948688?text=Hola%2C%20quiero%20ver%20una%20demo%20del%20dashboard%20BI%20Strategic." target="_blank" rel="noopener">Pedir demo</a>
     </nav>
-    <a class="header-cta" href="https://wa.me/56958948688?text=Hola%2C%20quiero%20ver%20una%20demo%20del%20dashboard%20BI%20Strategic." target="_blank" rel="noopener">Pedir demo</a>
   </header>
 
   <main>
     <section class="hero" id="inicio">
-      <div class="hero-content">
-        <p class="eyebrow">Dashboard listo en Google Sheets</p>
-        <h1>Dashboard de ventas para negocios que venden por Instagram, WhatsApp y ecommerce</h1>
-        <p class="hero-copy">
-          Ve ventas, ganancias, ticket promedio, productos mas vendidos y canales que mejor funcionan sin ordenar todo manualmente.
-        </p>
-        <div class="hero-actions" aria-label="Acciones principales">
-          <a class="button primary" href="https://wa.me/56958948688?text=Hola%2C%20quiero%20ver%20una%20demo%20del%20dashboard%20BI%20Strategic." target="_blank" rel="noopener">Pedir demo</a>
-          <a class="button secondary" href="#incluye">Ver que incluye</a>
+      <svg class="logo" viewBox="0 0 96 96" role="img" aria-label="Logo FD BI Strategic"><rect width="96" height="96" rx="24" fill="#111114"/><path d="M22 25h26v10H34v12h12v10H34v20H22V25Z" fill="#fff"/><path d="M53 25h10c14 0 23 10 23 26s-9 26-23 26H53V25Zm12 11v30c6-1 9-6 9-15s-3-14-9-15Z" fill="#fff"/><rect x="18" y="80" width="14" height="5" rx="2.5" fill="#168bf2"/><rect x="38" y="74" width="14" height="11" rx="3" fill="#0bb36d"/><rect x="58" y="67" width="14" height="18" rx="3" fill="#ffba08"/></svg>
+      <p class="eyebrow">Dashboard operativo en Google Sheets por Francisco Diaz</p>
+      <h1>BI Strategic</h1>
+      <p class="hero-copy">Ordeno tus ventas de WhatsApp, Instagram, ecommerce o notas manuales en una vista clara para revisar margen, productos top y canales sin armar reportes a mano.</p>
+      <div class="proof" aria-label="Resumen del piloto">
+        <span>24-48 horas</span><span>Piloto desde $79.000 CLP</span><span>Sin cambiar de sistema</span>
+      </div>
+      <div class="actions">
+        <a class="button primary" href="https://wa.me/56958948688?text=Hola%2C%20quiero%20ver%20una%20demo%20del%20dashboard%20BI%20Strategic." target="_blank" rel="noopener">Ver demo por WhatsApp</a>
+        <a class="button secondary" href="#vista">Mirar vista previa</a>
+      </div>
+    </section>
+
+    <section class="wrap preview" id="vista" aria-label="Vista previa del dashboard">
+      <article class="panel">
+        <div class="panel-top"><div class="panel-title"><strong>Dashboard de ventas</strong><span>Ventas, margen, canales y productos top.</span></div><span>Google Sheets</span></div>
+        <div class="kpis">
+          <div class="kpi"><small>Venta bruta</small><strong>$8.94M</strong></div>
+          <div class="kpi"><small>Margen</small><strong>29.9%</strong></div>
+          <div class="kpi"><small>Ticket</small><strong>$103k</strong></div>
+          <div class="kpi"><small>Registros</small><strong>86</strong></div>
         </div>
-        <div class="hero-proof" aria-label="Resumen de la oferta">
-          <span>Entrega 24/48 h</span>
-          <span>Google Sheets</span>
-          <span>Precio piloto</span>
+        <div class="bars" aria-hidden="true">
+          <div class="bar"><span>WhatsApp</span><i><span style="width:82%"></span></i><strong>$3.4M</strong></div>
+          <div class="bar"><span>Instagram</span><i><span style="width:64%"></span></i><strong>$2.1M</strong></div>
+          <div class="bar"><span>Ecommerce</span><i><span style="width:48%"></span></i><strong>$1.7M</strong></div>
         </div>
+      </article>
+      <div class="side">
+        <article class="side-card"><h3>Piloto inicial</h3><p>Ideal si ya vendes, tienes datos dispersos y quieres validar rapido si una vista de ventas te ayuda a decidir mejor.</p><a class="button primary" href="https://wa.me/56958948688?text=Hola%2C%20quiero%20reservar%20un%20piloto%20de%20BI%20Strategic." target="_blank" rel="noopener">Reservar piloto</a></article>
+        <article class="side-card"><h3>Preguntas que responde</h3><div class="questions"><span>Que canal trae mejor ticket?</span><span>Que producto conviene reponer?</span><span>Donde estoy perdiendo margen?</span><span>Como viene el mes?</span></div></article>
       </div>
     </section>
 
-    <section class="trust-strip" aria-label="Senales de confianza">
-      <p>Ideal para tiendas de ropa, pet shops, pastelerias, ecommerce y negocios que reciben pedidos por redes sociales.</p>
-    </section>
-
-    <section class="section problem">
-      <div class="section-copy">
-        <p class="eyebrow">El problema</p>
-        <h2>Cuando las ventas viven en varias partes, decidir se vuelve lento</h2>
-        <p>
-          Si vendes por WhatsApp, Instagram, web y tienda fisica, es facil perder visibilidad: que canal vende mas, que producto conviene empujar y cuanto margen real queda.
-        </p>
-      </div>
-      <div class="pain-list">
-        <div>
-          <strong>Ventas dispersas</strong>
-          <span>Pedidos en chats, planillas, tienda online y notas sueltas.</span>
-        </div>
-        <div>
-          <strong>Reportes manuales</strong>
-          <span>Mucho tiempo copiando datos antes de poder tomar decisiones.</span>
-        </div>
-        <div>
-          <strong>Ganancia poco clara</strong>
-          <span>Ventas altas no siempre significan buen margen.</span>
-        </div>
+    <section class="wrap section" id="incluye">
+      <div><p class="eyebrow">El problema</p><h2>Cuando las ventas viven en chats y planillas sueltas, el dato llega tarde.</h2><p class="hero-copy">BI Strategic no reemplaza tu forma de vender. Ordena la informacion que ya existe para ver que canal funciona, que producto deja margen y que conviene ajustar esta semana.</p></div>
+      <div class="cards">
+        <article class="card"><strong>Hoja de carga</strong><p>Fecha, cliente, producto, canal, venta, costo, margen, unidad y estado.</p></article>
+        <article class="card"><strong>Dashboard</strong><p>KPIs, tendencia mensual, mix de canales, ranking de productos y filtros.</p></article>
+        <article class="card"><strong>Copia cliente</strong><p>Version limpia con celdas protegidas, instrucciones breves y ejemplo de carga.</p></article>
+        <article class="card"><strong>Ajuste inicial</strong><p>Adaptamos categorias, canales y columnas segun como ya trabajas hoy.</p></article>
       </div>
     </section>
 
-    <section class="section solution" id="incluye">
-      <div class="section-copy">
-        <p class="eyebrow">La solucion</p>
-        <h2>Un panel simple para mirar ventas, canales y productos en una sola vista</h2>
-        <p>
-          BI Strategic se monta sobre Google Sheets, usa una hoja de carga sencilla y genera un dashboard con filtros, KPIs y panel BI para revisar el negocio sin software complejo.
-        </p>
-      </div>
-      <div class="feature-grid">
-        <article>
-          <span>01</span>
-          <h3>Carga de ventas</h3>
-          <p>Registra fecha, cliente, producto, canal, unidad, venta, costo y estado.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>Dashboard automatico</h3>
-          <p>Visualiza ventas, crecimiento, ganancia y ticket promedio.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Panel BI</h3>
-          <p>Abre una vista limpia con tendencias, canales y ranking de productos.</p>
-        </article>
-        <article>
-          <span>04</span>
-          <h3>Copia cliente</h3>
-          <p>Entrega una version limpia, protegida y lista para usar.</p>
-        </article>
-      </div>
+    <section class="wrap price-section" id="precio">
+      <article class="price"><p class="eyebrow">Oferta piloto</p><h3>Desde</h3><strong>$79.000 CLP</strong><p>Incluye dashboard en Google Sheets, configuracion inicial y una revision corta para dejarlo usable con tus datos.</p><ul><li>No requiere cambiar de sistema.</li><li>Funciona con carga manual o datos exportados.</li><li>Ideal si ya tienes al menos 30 ventas registradas.</li></ul><a class="button primary" href="https://wa.me/56958948688?text=Hola%2C%20quiero%20ver%20si%20mi%20planilla%20sirve%20para%20un%20dashboard%20BI%20Strategic." target="_blank" rel="noopener">Revisar mi planilla</a></article>
+      <article class="process"><h3>Como partimos</h3><ol><li><strong>Me muestras como registras ventas hoy.</strong></li><li><strong>Definimos canales, categorias y columnas utiles.</strong></li><li><strong>Te entrego una copia limpia para usar.</strong></li><li><strong>Ajustamos lo necesario despues de probarla.</strong></li></ol></article>
     </section>
 
-    <section class="demo-section" aria-label="Vista previa del dashboard">
-      <div class="demo-copy">
-        <p class="eyebrow">Vista demo</p>
-        <h2>Hecho para revisar el negocio sin abrir diez pestanas</h2>
-        <p>La demo muestra KPIs, ventas mensuales, mix de canales y productos top con un formato facil de explicar al equipo.</p>
-      </div>
-      <img src="assets/dashboard-preview.svg" alt="Vista previa de dashboard BI Strategic con KPIs, barras y ranking de productos">
+    <section class="wrap faq">
+      <div><p class="eyebrow">FAQ</p><h2>Antes de pedir la demo.</h2></div>
+      <div class="faq-list"><details open><summary>Necesito saber usar Excel o Google Sheets?</summary><p>No. La idea es que cargues ventas en una tabla simple y revises el panel.</p></details><details><summary>Cuanto demora el piloto?</summary><p>Normalmente 24 a 48 horas despues de recibir una muestra de ventas y categorias.</p></details><details><summary>Incluye integraciones automaticas?</summary><p>El piloto parte simple. Integraciones con Shopify, Mercado Libre u otros sistemas se cotizan aparte.</p></details></div>
     </section>
 
-    <section class="section pricing" id="precio">
-      <div class="price-panel">
-        <p class="eyebrow">Piloto</p>
-        <h2>Desde $79.000 CLP</h2>
-        <p>Implementacion inicial para validar si el dashboard ayuda a ordenar tus ventas y tomar mejores decisiones.</p>
-        <ul>
-          <li>Dashboard personalizado en Google Sheets.</li>
-          <li>Panel BI con boton visible.</li>
-          <li>Filtros por ano, mes y unidad.</li>
-          <li>Protecciones y copia limpia para uso diario.</li>
-          <li>Capacitacion breve por llamada o video.</li>
-        </ul>
-        <a class="button primary" href="https://wa.me/56958948688?text=Hola%2C%20quiero%20reservar%20un%20piloto%20de%20BI%20Strategic." target="_blank" rel="noopener">Reservar piloto</a>
-      </div>
-      <div class="process">
-        <h2>Como funciona</h2>
-        <ol>
-          <li><strong>Diagnostico:</strong> revisamos como registras ventas hoy.</li>
-          <li><strong>Configuracion:</strong> adapto categorias, canales y unidades.</li>
-          <li><strong>Entrega:</strong> recibes demo, copia limpia y guia rapida.</li>
-          <li><strong>Revision:</strong> ajustamos lo necesario para que puedas usarlo.</li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section faq" id="faq">
-      <div class="section-copy">
-        <p class="eyebrow">Preguntas frecuentes</p>
-        <h2>Lo importante antes de partir</h2>
-      </div>
-      <div class="faq-list">
-        <details>
-          <summary>Necesito saber usar Excel o Google Sheets?</summary>
-          <p>No. La idea es que solo cargues ventas en una tabla simple y revises el dashboard.</p>
-        </details>
-        <details>
-          <summary>Cuanto demora?</summary>
-          <p>El piloto inicial se entrega normalmente en 24 a 48 horas despues de recibir la informacion base.</p>
-        </details>
-        <details>
-          <summary>Sirve si vendo por varios canales?</summary>
-          <p>Si. Justamente esta pensado para separar ventas por Web, Instagram, WhatsApp, Mercado Libre o tienda fisica.</p>
-        </details>
-        <details>
-          <summary>Que necesito enviar?</summary>
-          <p>Una muestra de ventas, categorias, canales y cualquier dato que ya uses para mirar tu negocio.</p>
-        </details>
-      </div>
-    </section>
-
-    <section class="final-cta">
-      <p class="eyebrow">Siguiente paso</p>
-      <h2>Pide una demo y ve si calza con tu negocio</h2>
-      <p>Si tienes ventas dispersas y quieres una vista clara sin cambiar de sistema, partamos con un piloto corto.</p>
-      <a class="button primary" href="https://wa.me/56958948688?text=Hola%2C%20quiero%20ver%20una%20demo%20del%20dashboard%20BI%20Strategic." target="_blank" rel="noopener">Pedir demo</a>
+    <section class="final">
+      <svg class="logo" viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" rx="24" fill="#111114"/><path d="M22 25h26v10H34v12h12v10H34v20H22V25Z" fill="#fff"/><path d="M53 25h10c14 0 23 10 23 26s-9 26-23 26H53V25Zm12 11v30c6-1 9-6 9-15s-3-14-9-15Z" fill="#fff"/><rect x="18" y="80" width="14" height="5" rx="2.5" fill="#168bf2"/><rect x="38" y="74" width="14" height="11" rx="3" fill="#0bb36d"/><rect x="58" y="67" width="14" height="18" rx="3" fill="#ffba08"/></svg>
+      <h2>Mandame una muestra de ventas y vemos si calza.</h2>
+      <p class="hero-copy">Si el dato existe pero esta desordenado, probablemente se puede convertir en un panel util.</p>
+      <div class="actions"><a class="button primary" href="https://wa.me/56958948688?text=Hola%2C%20quiero%20ver%20una%20demo%20del%20dashboard%20BI%20Strategic.%20Tengo%20ventas%20por%20varios%20canales." target="_blank" rel="noopener">Pedir demo</a></div>
     </section>
   </main>
 
-  <footer>
-    <span>BI Strategic</span>
-    <a href="mailto:franciscodiaz2003@gmail.com">franciscodiaz2003@gmail.com</a>
-  </footer>
-
-  <script src="script.js"></script>
+  <footer><strong>BI Strategic</strong><a href="mailto:franciscodiaz2003@gmail.com">franciscodiaz2003@gmail.com</a></footer>
 </body>
 </html>
